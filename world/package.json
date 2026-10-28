@@ -1,0 +1,12 @@
+{
+  "name": "my-virtual-world",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Authenticated social virtual-world prototype with Supabase and multiplayer WebSockets",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
+    "ws": "^8.18.0"
+  }
+}

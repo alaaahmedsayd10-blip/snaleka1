@@ -1,0 +1,11 @@
+PlayroomKit multiplayer setup
+
+1. Open world/public/game.js
+2. Find this line near the multiplayer section:
+   const PLAYROOM_GAME_ID = 'PASTE_YOUR_PLAYROOM_GAME_ID_HERE';
+3. Replace the placeholder with the gameId from Playroom Dev Portal > your project > Configuration.
+4. Deploy the contents of world/public to Cloudflare Pages (or deploy the world folder if your Pages project uses public as its output directory).
+
+The room code is fixed to cairo50 and maxPlayersPerRoom is 50. Supabase auth code was preserved; only the multiplayer connection flow was switched to PlayroomKit so Cloudflare Pages does not depend on the Node WebSocket server.
+
+Important: PlayroomKit requires a real gameId. The project cannot connect to Playroom until you add your own gameId; it is not possible to infer or fabricate that value.

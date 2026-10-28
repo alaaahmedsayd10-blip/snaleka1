@@ -1,0 +1,12 @@
+تم تفعيل شخصية Night Bloom من صور المرجع التي أرسلها المستخدم.
+
+- night_bloom_front.png: الجسم من الأمام مع الوش الفاضي والتاتو.
+- night_bloom_back.png: الجسم من الخلف بلون جلد متناسق.
+- الصور شفافة وبنفس المقاس 600x1320 حتى تتوافق مع نظام حركة اللعبة.
+- avatar-pack-manifest.js يختار Night Bloom افتراضيًا؛ الجسم القديم pearl/tan لم يعد مستخدمًا.
+- حركة المشي الحالية تحرك الجزء السفلي بالتبادل وتحرّك الجذع مع كل خطوة.
+
+لإضافة طبقات ملابس/شعر/إكسسوارات جديدة لاحقًا، أضف PNG شفافًا بنفس المقاس وسجّله في items داخل avatar-pack-manifest.js مع slot المناسب.
+
+[تحديث] تمت إضافة: Soft Floral Eyes, Furrowed Brows, Nose Ring, Fangless Flirt, Kpop Glasses (لابسهم الأفتار افتراضيًا).
+[تحديث] تمت إضافة: Burst Fade Mullet (شعر)، Spiked Denim Jacket (قميص)، White Breezy Jeans (بنطلون)، White Airmojo 21s (جزمة) - أمام وخلف، لابسهم الأفتار افتراضيًا.

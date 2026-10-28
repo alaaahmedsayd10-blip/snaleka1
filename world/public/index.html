@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>عالمي الافتراضي</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<canvas id="c"></canvas>
+<div id="top"><button id="gear" class="ic" title="الإعدادات">⚙️</button><span id="gold" class="pill">🪙 0</span><span id="roomName" class="pill"></span></div>
+<div id="log" class="log"></div>
+<div id="emoP" class="emo"></div>
+<div id="mapP" class="modal mapP"></div>
+<div id="bar">
+ <div class="icons"><button id="bM" class="ic" title="الخريطة">🗺</button><button id="bC" class="ic" title="البس">👕</button><button id="bE" class="ic" title="إشارات">😀</button><button id="bL" class="ic" title="الشات">💬</button><button id="bS" class="ic" title="المتجر">🛍</button><button id="bF" class="ic" disabled title="اصطد">🎣</button><button id="bSit" class="ic" title="اقعد" style="display:none">🪑</button></div>
+ <div class="chat"><input id="ch" placeholder="اكتب ما تريد قوله هنا" maxlength="60"><button id="send" class="ic">➤</button></div>
+</div>
+<div id="panel"></div>
+<div id="gearP" class="modal"><div class="card"><h3>⚙️ الإعدادات</h3><button id="fs" class="p">⛶ ملء الشاشة</button><button id="chg">🔄 غيّر الشخصية والاسم</button><button id="gx">إغلاق</button></div></div>
+<div id="start"><div class="creator">
+ <div class="cprev"><canvas id="prev" width="255" height="561"></canvas><div class="rot"><button id="vF" class="p">أمام</button><button id="vB">خلف</button></div></div>
+ <div class="cpanel"><h2>جهّز شخصيتك</h2><div id="tabs"></div><div id="colors"></div><div id="grid"></div>
+  <div class="cfoot"><input id="nm" placeholder="اسم الشخصية" maxlength="12"><button class="p" id="go">ابدأ ▶</button></div></div>
+</div></div>
+<div id="auth" class="auth-screen"><div class="card auth-card"><h2>🌴 عالمي الافتراضي</h2><p>سجّل دخولك عشان تدخل العالم وتقابل اللاعبين</p><div class="auth-tabs"><button id="tabLogin" class="p">تسجيل الدخول</button><button id="tabRegister">حساب جديد</button></div><label>البريد الإلكتروني<input id="authEmail" type="email" autocomplete="email" placeholder="name@example.com" required></label><label>كلمة المرور<input id="authPass" type="password" autocomplete="current-password" placeholder="6 أحرف على الأقل" minlength="6" required></label><label id="usernameRow" style="display:none">اسمك في اللعبة<input id="authUser" maxlength="16" autocomplete="nickname" placeholder="اسم اللاعب"></label><button id="authSubmit" class="p">دخول إلى العالم</button><button id="forgotPass">نسيت كلمة المرور؟</button><div id="authStatus" role="status" aria-live="polite"></div><small>حسابك وكلمة المرور تتم إدارتهما عبر Supabase. لا تشارك كلمة المرور مع أي شخص.</small></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="avatar-pack-manifest.js"></script><script src="avatar-pack.js"></script><script src="avatar.js"></script><script src="game.js"></script></body></html>
