@@ -1,0 +1,51 @@
+name: Extract game ZIP
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract my-virtual-world_v24.zip
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import shutil
+
+          archive = Path("my-virtual-world_v24.zip")
+          if not archive.is_file():
+              raise SystemExit("ERROR: my-virtual-world_v24.zip was not found in the repository root.")
+
+          root = Path(".").resolve()
+          with ZipFile(archive) as z:
+              for item in z.infolist():
+                  target = (root / item.filename).resolve()
+                  if target != root and root not in target.parents:
+                      raise SystemExit(f"Unsafe path inside ZIP: {item.filename}")
+              z.extractall(root)
+
+          archive.unlink()
+          print("ZIP extracted and archive removed.")
+          PY
+
+      - name: Commit extracted files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No file changes to commit."
+          else
+            git commit -m "Extract game ZIP into repository"
+            git push
+          fi
